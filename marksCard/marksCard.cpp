@@ -36,9 +36,34 @@ void MarksCard::addSubjectMarks(void) {
 
 void MarksCard::calculateTotalsAndGrades(void) {
     // Implementation for calculating totals and grades
-    
+
+    totalMarks = 0.0;
+    for (const auto& entry : subjectMarks) {
+        totalMarks += entry.second;
+    }
+
+    averageMarks = totalMarks / subjectMarks.size();
+    percentage = (totalMarks / (subjectMarks.size() * 100)) * 100;
 }
 
 void MarksCard::displayMarksCard(void) {
     // Implementation for displaying marks card
+
+    cout << "Student Name: " << studentName << endl;
+    cout << "Roll Number: " << rollNumber << endl;
+    cout << "Date of Birth: " << dateOfBirth << endl;
+
+    cout << "Course Name: " << courseName << endl;
+    cout << "Academic Year: " << academicYear << endl;
+    cout << "Semester: " << semester << endl;
+    cout << "Marks Obtained: " << endl;
+    for (const auto& entry : subjectMarks) {
+        cout << entry.first << ": " << entry.second << endl;
+    }
+    cout << "Total Marks: " << totalMarks << endl;
+    cout << "Average Marks: " << averageMarks << endl;
+    cout << "Percentage: " << percentage << "%" << endl;
+    cout << "Grade: " << grade << endl;
+    cout << "Passed: " << (isPassed ? "Yes" : "No") << endl;
+    cout << "GPA: " << gpa << endl;
 }

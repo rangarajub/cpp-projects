@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 using namespace std;
 
 class MarksCard {
@@ -40,6 +41,6 @@ class MarksCard {
     void addSubjectMarks(void);
     void calculateTotalsAndGrades(void);
     void displayMarksCard(void);
-}   
+};   
 
 #endif // MARKSCARD_H
